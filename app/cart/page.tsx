@@ -7,6 +7,9 @@ import { supabase } from 'utils/supabase'
 
 export default function ShoeDetails({ params }: { params: { id: string } }) {
   // This should ideally come from your application's state (e.g., Redux, Context API)
+  if (window !== undefined) {
+    return <></>
+  }
   const cartItems = JSON.parse(localStorage.getItem('cart_array') ?? '[]')
 
   const handleRemoveItem = (itemId) => {

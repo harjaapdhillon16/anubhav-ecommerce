@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 import Link from 'next/link'
 import { useState, useCallback, useEffect } from 'react'
@@ -9,7 +10,7 @@ export default function ShoeDetails({ params }: { params: { id: string } }) {
   const cartItems = JSON.parse(localStorage.getItem('cart_array') ?? '[]')
 
   const handleRemoveItem = (itemId) => {
-    localStorage.removeItem("cart_array");
+    localStorage.removeItem('cart_array' ?? '')
     window.location.reload()
     // Logic to remove an item from the cart
   }
@@ -49,7 +50,7 @@ export default function ShoeDetails({ params }: { params: { id: string } }) {
                 <input
                   type="number"
                   min="1"
-                  className="form-input mx-2 bg-black text-white w-16"
+                  className="form-input mx-2 w-16 bg-black text-white"
                   value={item.quantity}
                   onChange={(e) => handleChangeQuantity(item.id, parseInt(e.target.value))}
                 />

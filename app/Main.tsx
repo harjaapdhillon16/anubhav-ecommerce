@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 import Link from 'next/link'
 import { supabase } from '../utils/supabase'
@@ -19,7 +20,7 @@ export default function Home({ posts }) {
       <div className="container mx-auto p-4">
         <h2 className="mb-4 text-2xl font-bold">Our Shoes Collection</h2>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {allShoes.map((shoe:any) => (
+          {allShoes.map((shoe: any) => (
             <Link
               key={shoe.id}
               href={`/shoe-details/${shoe.id}`}

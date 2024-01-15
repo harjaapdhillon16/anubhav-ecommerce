@@ -18,6 +18,7 @@ export default function ShoeDetails({ params }: { params: { id: string } }) {
     // Add the shoe to the cart (logic depends on your cart management)
     setShowCartModal(true)
   }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [shoe, setShoe] = useState<any>(null)
 
   const proceedToCheckout = () => {
